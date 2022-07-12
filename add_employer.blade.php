@@ -79,7 +79,7 @@
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
                         <div>
-                            <button type="sumbit" class="btn btn-lg btn-primary mt-4" id="button">Добавить
+                            <button type="button" class="btn btn-lg btn-primary mt-4" id="button">Добавить
                                 работника</button>
                         </div>
                     </div>
