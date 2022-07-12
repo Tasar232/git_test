@@ -27,7 +27,7 @@
                     <div>
                         <select class="form-select col-2" aria-label="Default select example">
                             @foreach ($municipals as $mun)
-                            <option value={{ $loop->iteration }}>{{$mun->name_municipality}}</option>
+                                <option value={{ $loop->iteration }}>{{ $mun->name_municipality }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -45,7 +45,7 @@
                     <div>
                         <select id="job" class="form-select" aria-label="Default select example">
                             @foreach ($ed_orgs as $eo)
-                            <option value={{ $loop->iteration }}>{{$eo->name_education_org}}</option>
+                                <option value={{ $loop->iteration }}>{{ $eo->name_education_org }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -65,16 +65,16 @@
                     <div>
                         <select class="form-select" aria-label="Default select example">
                             @foreach ($positions as $pos)
-                            <option value={{ $loop->iteration }}>{{$pos->name}}</option>
+                                <option value={{ $loop->iteration }}>{{ $pos->name }}</option>
                             @endforeach
-                            
+
                         </select>
                     </div>
                     <div id="forSelect">
 
                     </div>
                     <div>
-                        <button class="btn btn-sm btn-outline-primary mt-2 mb-1" onclick='add();'>+ Добавить
+                        <button class="btn btn-sm btn-outline-primary mt-2 mb-1" onclick='add(this);'>+ Добавить
                             должность</button>
                     </div>
                     <div class="d-flex align-items-center justify-content-center">
@@ -111,7 +111,9 @@
             button.closest("div").remove();
         }
 
-        function add() {
+        function add(event) {
+            event.stopPropagation();
+            event.preventDefault(); 
             var parties = ["Должность 1", "Должность 2", "Должность 3", "Должность 4"];
             var select = document.createElement("select"); //создаем новые елементы
             var div = document.createElement("div");
